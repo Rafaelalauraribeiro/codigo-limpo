@@ -3,35 +3,36 @@ package fila;
 
 //Como inserir um nodo em uma fila vazia
 public class Fila {
-	private Nodo inicio;
+	private Nodo inicioDaFila;
 
 	public Fila() {
-		this.inicio = null;
-	}
-	// fila sempre remove no inicio e insere no final
+		this.inicioDaFila = null;
+	}	// fila sempre remove no inicio e insere no final
 
-	public void insereNoFinal(int valor) {
-		Nodo novo = new Nodo(valor);
-		// inserindo nodo em fila vazia
-		if (inicio == null) {
-			this.inicio = novo;
-		} else { // caso ja tenha nodos na fila
-			Nodo aux = inicio;
-			while (aux.getProximo() != null) {
-				aux = aux.getProximo();
-			}
-			aux.setProximo(novo);
+	public void inserirNodoNoFinal (int nodoValor) {
+		Nodo novoNodo = new Nodo (nodoValor);
+		if (inicioDaFila == null) {
+		this.inicioDaFila = novoNodo;
 		}
-	}
+		else {
+		Nodo auxiliarDeContagem = inicioDaFila;
+		while (auxiliarDeContagem.getProximoDaFila() != null) {
+		auxiliarDeContagem = auxiliarDeContagem.getProximoDaFila();
+		
+		}
+		auxiliarDeContagem.setProximoDaFila(novoNodo);
+		
+		}
+		}
 
 	public void imprime() {
-		if (inicio == null) {
+		if (inicioDaFila == null) {
 			System.out.println("Lista vazia!");
 		} else {
-			Nodo aux = inicio;
+			Nodo aux = inicioDaFila;
 			while (aux != null) { // o aux ta em cima do 3, em cima do nodo, ao inves de ver o prox
 				System.out.println(aux.getValor());
-				aux = aux.getProximo();
+				aux = aux.getProximoDaFila();
 
 			}
 		}
@@ -39,18 +40,18 @@ public class Fila {
 
 	// remover do inicio, pois na fila se remove o primeiro
 	public void removeDoInicio() {
-		Nodo aux = inicio;
+		Nodo aux = inicioDaFila;
 
-		if (this.inicio == null) {
+		if (this.inicioDaFila == null) {
 			System.out.println("Lista vazia");
 		} else {//
 
-			if (this.inicio.getProximo() == null) {// o proximo do inicio for nulo, quer dizer que temos que remover o
+			if (this.inicioDaFila.getProximoDaFila() == null) {// o proximo do inicio for nulo, quer dizer que temos que remover o
 													// inicio, inicio==null
-				this.inicio = null; // remove inicio
+				this.inicioDaFila = null; // remove inicio
 			} else {// caso o proximo do inicio não seja nulo , então o proximo do inicio vai ser o
 					// 'novo' inicio, removendo então o inicio
-				this.inicio = inicio.getProximo(); // Para apontar o inicio para o segundo nodo, automaticamente já
+				this.inicioDaFila = inicioDaFila.getProximoDaFila(); // Para apontar o inicio para o segundo nodo, automaticamente já
 													// estamos removendo o primeiro nodo
 			}
 		}

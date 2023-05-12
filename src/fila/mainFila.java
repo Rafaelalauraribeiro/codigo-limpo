@@ -5,9 +5,9 @@ public class mainFila {
 		
 		Fila fila = new Fila();
 		
-		fila.insereNoFinal(1);
-		fila.insereNoFinal(2);
-		fila.insereNoFinal(3);
+		fila.inserirNodoNoFinal(1);
+		fila.inserirNodoNoFinal(2);
+		fila.inserirNodoNoFinal(3);
 		fila.removeDoInicio();
 		fila.imprime();
 
