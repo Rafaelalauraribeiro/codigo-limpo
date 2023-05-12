@@ -8,7 +8,7 @@ public class mainFila {
 		fila.inserirNodoNoFinal(1);
 		fila.inserirNodoNoFinal(2);
 		fila.inserirNodoNoFinal(3);
-		fila.removeDoInicio();
+		fila.removerNodoDoInicio();
 		fila.imprime();
 
 		
