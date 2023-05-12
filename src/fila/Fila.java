@@ -1,12 +1,12 @@
 package fila;
 
-//Como inserir um nodo em uma fila vazia
+
 public class Fila {
 	private Nodo inicioDaFila;
 
 	public Fila() {
 		this.inicioDaFila = null;
-	} // fila sempre remove no inicio e insere no final
+	} 
 
 	public void inserirNodoNoFinal(int nodoValor) {
 		Nodo novoNodo = new Nodo(nodoValor);
@@ -28,7 +28,7 @@ public class Fila {
 			System.out.println("Lista vazia!");
 		} else {
 			Nodo aux = inicioDaFila;
-			while (aux != null) { // o aux ta em cima do 3, em cima do nodo, ao inves de ver o prox
+			while (aux != null) { 
 				System.out.println(aux.getValor());
 				aux = aux.getProximoDaFila();
 
@@ -36,7 +36,7 @@ public class Fila {
 		}
 	}
 
-	// remover do inicio, pois na fila se remove o primeiro
+	
 	public void removerNodoDoInicio() {
 		
 		if (this.inicioDaFila == null) {
