@@ -19,10 +19,10 @@ public class Nodo {
 	public void setValor(int valor) {
 		this.valor = valor;
 	}
-	public Nodo getProximo() {
+	public Nodo getProximoDaFila() {
 		return proximo;
 	}
-	public void setProximo(Nodo proximo) {
+	public void setProximoDaFila(Nodo proximo) {
 		this.proximo = proximo;
 	}
 
